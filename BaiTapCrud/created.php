@@ -10,13 +10,13 @@
 <?php
 include_once "config.php";
 if (isset($_POST['name']) && isset($_POST['price']) && isset($_POST['inventory']) && isset($_POST['supplier']) && isset($_POST['created'])){
-    if($_POST['name'] && ($_POST['price'] > 0) && ($_POST['inventory'] > 0) && $_POST['supplier'] && $_POST['created']){
+    if($_POST['name'] && $_POST['price'] && $_POST['inventory']  && $_POST['supplier'] && $_POST['created'] > 0){
         $ten = $_POST['name'];
         $gia_tien = $_POST['price'];
         $ton_kho = $_POST['inventory'];
         $nha_cung_cap = $_POST['supplier'];
         $ngay_tao = $_POST['created'];
-        $sqlInsert = "INSERT INTO products (name, price, inventory, supplier, created) VALUES ('$name', '$price', '$inventory', '$supplier', '$created')";
+        $sqlInsert = "INSERT INTO products (name, price, inventory, supplier, created) VALUES ('$ten', '$gia_tien', '$ton_kho', '$nha_cung_cap', '$ngay_tao')";
         if(mysqli_query($connection, $sqlInsert)){
             echo "Insert thành công";
             header('Location: index.php');
