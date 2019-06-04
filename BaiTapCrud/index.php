@@ -42,11 +42,11 @@ $result = mysqli_query($connection, $sql);
                             <td><?= $row['supplier'] ?></td>
                             <td><?= $row['created'] ?></td>
                             <td>
-                                <div>
+                                <div style="width: 50px">
                                     <a class="btn btn-warning" href="edit.php?id=<?php echo $row['id'] ?>">EDIT</a>
                                 </div>
 
-                                <div>
+                                <div style="width: 50px">
                                     <a class="btn btn-danger" href="delete.php?id=<?php echo $row['id'] ?>">DELETE</a>
                                 </div>
                             </td>
