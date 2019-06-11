@@ -42,7 +42,7 @@ $database = new Database();
         <tr>
             <td><?= $val_cart_item['id'] ?></td>
             <td><?= $val_cart_item['product_name'] ?></td>
-            <td><img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x30]" style="height: 30px;width:auto;display: block" src="image/<?= $product['product_image'] ?>" data-holder-rendered="true"></td>
+            <td><img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x30]" style="height: 30px;width:auto;display: block" src="image/<?= $val_cart_item['product_image'] ?>" data-holder-rendered="true"></td>
             <td><?= $val_cart_item['price'] ?></td>
             <td><?= $val_cart_item['quantity'] ?></td>
             <td><?php
@@ -96,6 +96,7 @@ $database = new Database();
                                             <input type="submit" name="submit" class="btn btn-sm btn-outline-secondary" value="Thêm vào giỏ hàng">
                                         </lable>
                                     </div>
+                                    <small style="font-weight: bold"><?= $product['price']?> VNĐ</small>
                                 </div>
                             </div>
                         </div>
