@@ -68,7 +68,7 @@ $database = new Database();
 <?php } else{?>
     <div class="container">
         <h2>Giỏ hàng</h2>
-        <p>Giỏ hàng của bạn đang rỗng</p>
+        <p>Giỏ hàng của bạn đang rỗng xin mời xem và mua sản phẩm</p>
 
     </div>
 <?php }?>
