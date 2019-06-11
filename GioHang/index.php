@@ -11,6 +11,7 @@ $database = new Database();
     <title>Title</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/font-awesome.css">
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -19,7 +20,7 @@ $database = new Database();
 
 </head>
 <body>
-<?php if(isset($_SESSION['cart_item']) && !empty($_SESSION['cart_item'])){ ?>
+	<?php if(isset($_SESSION['cart_item']) && !empty($_SESSION['cart_item'])){ ?>
 <div class="container">
     <h2>Giỏ hàng</h2>
     <p>Chi tiết giỏ hàng của bạn</p>
@@ -53,7 +54,7 @@ $database = new Database();
                 <form name="remove<?= $val_cart_item['id']  ?>" action="process.php" method="post">
                     <input type="hidden" name="product_id" value="<?= $val_cart_item['id'] ?>">
                     <input type="hidden" name="action" value="remove">
-                    <input type="submit" name="submit" class="btn btn-sm btn-outline-secondary" value="Xóa">
+                    <input type="submit" name="submit" class="btn btn-sm btn-outline-secondary" value="Xóa" onclick="return confirm('Bạn có chắn muốn xóa sản phẩm khỏi giỏ hàng')">
                 </form>
 
             </td>
@@ -72,7 +73,8 @@ $database = new Database();
 
     </div>
 <?php }?>
-<div class="container" style="margin-top: 50px">
+
+<div class="container" style="margin-top: 50px"> 
     <div class="row">
         <?php
         $sql = "SELECT * FROM products";
