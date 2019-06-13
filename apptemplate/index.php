@@ -14,7 +14,7 @@
 
 		<!-- section -->
 		<?php 
-		if (isset($_GET["page"] && $_GET["page"])) {
+		if (isset($_GET["page"]) && $_GET["page"]) {
 			$filepath = dirname( __FILE__)."/pages/".trim($_GET["page"]) . "php";
 			echo "<br> FILE PATH : " . $filepath;
 			if (file_exists($filepath)) {
